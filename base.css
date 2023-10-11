@@ -1,0 +1,49 @@
+/* The integration's default injected base.css file */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Inter";
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    src: url(/fonts/Inter-Light.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Inter";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url(/fonts/Inter-Regular.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Inter";
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    src: url(/fonts/Inter-Medium.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Inter";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url(/fonts/Inter-SemiBold.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Inter";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    line-height: 1;
+    src: url(/fonts/Inter-Bold.ttf) format("truetype");
+  }
+}
+
+@layer components {
+  .my-mask-image {
+    mask-image: radial-gradient(rgba(0, 0, 0, 0.45), transparent 70%);
+  }
+}

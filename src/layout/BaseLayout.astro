@@ -1,0 +1,25 @@
+---
+// import Header from "../components/Header.astro";
+// import Footer from "../components/Footer.astro";
+// Supports weights 100-900
+
+const { pageTitle } = Astro.props;
+---
+
+<html
+  lang="en"
+  class="overflow-x-hidden break-words bg-black [color-scheme:dark]"
+>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body class="min-h-screen max-w-[1232px] mx-auto font-sans">
+    <!-- <Header /> -->
+    <slot />
+    <!-- <Footer /> -->
+  </body>
+</html>
