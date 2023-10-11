@@ -1,0 +1,12 @@
+---
+const { cardTitle, cardWidth, cardHeight } = Astro.props;
+---
+
+<main
+  class=`${cardWidth} ${cardHeight} border-2 border-solid border-neutral-border bg-neutral rounded-xl p-4`
+>
+  <h1 class="mb-4 text-center text-2xl font-semibold tracking-tight">
+    {cardTitle}
+  </h1>
+  <slot />
+</main>
