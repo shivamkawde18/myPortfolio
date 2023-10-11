@@ -1,4 +1,13 @@
 ---
+import "../../base.css";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon";
+import MyImage from "../icons/myImage.png";
+import ButtonPrimary from "../components/ButtonPrimary.astro";
+import ButtonSecondary from "../components/ButtonSecondary.astro";
+import Card from "../components/Card.astro";
+import BaseLayout from "../layout/BaseLayout.astro";
+
 const pagetitle: string = "vivek";
 ---
 
@@ -11,6 +20,76 @@ const pagetitle: string = "vivek";
     <title>Astro</title>
   </head>
   <body>
-    <h1 class="text-xl">{pagetitle}</h1>
+    <BaseLayout pageTitle="hello">
+      <section class="flex min-h-screen w-full flex-col">
+        <div class="mb-24 flex justify-between">
+          <div class="max-w-2xl">
+            <div>
+              <h1 class="text-header font-bold leading-none tracking-tight">
+                Hi there,I&apos;m <br /> Vivek Lokhande.
+              </h1>
+              <p class="mt-10">
+                I like tinkering with open source. Experimenting with new
+                frameworks
+
+                <br /> Lately getting interested in creating useful products
+                which
+
+                <br /> people can use.On my journey to become a fullstack dev.
+              </p>
+            </div>
+            <div class="mt-20 flex gap-4">
+              <ButtonPrimary value="Read my blogs" href="/" />
+              <ButtonSecondary value="Connect with me" href="/" />
+            </div>
+          </div>
+          <div class="group relative w-fit">
+            <Icon
+              name="circle"
+              class="h-[340px] w-[340px] animate-spin-slow group-hover:animate-spin"
+            />
+            <Image
+              src={MyImage}
+              alt="my picture"
+              class="absolute left-5 top-5 cursor-pointer"
+            />
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <Card
+            cardTitle="About Me"
+            cardWidth="w-[720px]"
+            cardHeight="h-[480px]"
+          >
+            <p class="tracking-tight">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam
+              id aliquid molestias earum similique, cupiditate fuga provident
+              eius obcaecati modi iusto labore voluptate, sit nihil quasi
+              maxime, tempora tempore dolores.
+              <br />
+               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam
+              id aliquid molestias earum similique, cupiditate fuga provident
+              eius obcaecati modi iusto labore voluptate, sit nihil quasi
+              maxime, tempora tempore dolores.
+            </p>
+          </Card>
+          <Card
+            cardTitle="About Me"
+            cardWidth="w-[480px]"
+            cardHeight="h-[480px]"
+          >
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam id
+            aliquid molestias earum similique, cupiditate fuga provident eius
+            obcaecati modi iusto labore voluptate, sit nihil quasi maxime,
+            tempora tempore dolores.
+            <br />
+             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam
+            id aliquid molestias earum similique, cupiditate fuga provident eius
+            obcaecati modi iusto labore voluptate, sit nihil quasi maxime,
+            tempora tempore dolores.
+          </Card>
+        </div>
+      </section>
+    </BaseLayout>
   </body>
 </html>
