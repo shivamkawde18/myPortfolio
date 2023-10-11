@@ -1,5 +1,5 @@
 ---
-// import Header from "../components/Header.astro";
+import Navbar from "../components/Navbar.astro";
 // import Footer from "../components/Footer.astro";
 // Supports weights 100-900
 
@@ -17,8 +17,8 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body class="min-h-screen max-w-[1232px] mx-auto font-sans">
-    <!-- <Header /> -->
+  <body class="mx-auto min-h-screen max-w-[1232px] font-sans">
+    <Navbar />
     <slot />
     <!-- <Footer /> -->
   </body>
