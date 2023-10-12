@@ -11,6 +11,12 @@ module.exports = {
         white: "#FFFFFF",
         neutral: "#18181B",
         "neutral-border": "#4B4C52",
+        "color-blue": "#1EA2F1",
+        "color-red": "#D03E3F",
+        "color-yellow": "#FBCC13",
+      },
+      variants: {
+        fill: ["hover", "focus"],
       },
       animation: {
         "spin-slow": "spin 9s linear infinite",

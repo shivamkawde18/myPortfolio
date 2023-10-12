@@ -18,8 +18,20 @@ import linkedinLogo from "../icons/linkedin.svg";
   <nav
     class="border-neutral-border mb-14 mt-4 flex w-fit cursor-pointer rounded-full border-2 border-solid bg-black px-4 py-2"
   >
-    <Image src={ghLogo} alt="github_logo" class="mx-3 h-6 w-6" />
-    <Image src={xLogo} alt="x_logo" class="mx-3 h-6 w-6" />
-    <Image src={linkedinLogo} alt="linkedin_logo" class="mx-3 h-6 w-6" />
+    <Icon
+      name="github-mark-white"
+      alt="gh_logo"
+      class="hover:text-color-red focus:text-color-red mx-3 h-6 w-6 transform transition duration-300"
+    />
+    <Icon
+      name="twitterx"
+      alt="x_logo"
+      class="hover:text-color-yellow focus:text-color-yellow mx-3 h-6 w-6 transform transition duration-300"
+    />
+    <Icon
+      name="linkedin"
+      alt="linkedin_logo"
+      class="hover:text-color-blue focus:text-color-blue mx-3 h-6 w-6 transform transition duration-300"
+    />
   </nav>
 </aside>
