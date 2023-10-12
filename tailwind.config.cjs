@@ -14,6 +14,7 @@ module.exports = {
         "color-blue": "#1EA2F1",
         "color-red": "#D03E3F",
         "color-yellow": "#FBCC13",
+        footer: "#171717",
       },
       variants: {
         fill: ["hover", "focus"],
@@ -24,6 +25,8 @@ module.exports = {
       backgroundImage: {
         "blue-purple-gradient":
           "linear-gradient(176deg, #2930A9 10.97%, #5D6BD1 290%)",
+        "radial-blur-gradient":
+          "radial-gradient(rgba(0, 0, 0, 0.45), transparent 70%)",
       },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
