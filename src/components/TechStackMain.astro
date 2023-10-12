@@ -1,0 +1,56 @@
+---
+import { Icon } from "astro-icon";
+import Card from "./Card.astro";
+---
+
+<div>
+  <h1 class="text-center text-4xl font-bold leading-none tracking-tight">
+    My Tech Stack
+  </h1>
+  <div class="relative mt-8 flex items-center justify-center">
+    <div class="border-neutral-border mx-auto h-[480px] w-[1px] border"></div>
+    <div
+      class="border-neutral-border absolute mx-auto h-[1px] w-full max-w-[1130px] border"
+    >
+    </div>
+    <div class="absolute mx-auto grid w-full max-w-[1130px] grid-cols-2">
+      <div class="flex h-[200px] w-full items-center justify-center">
+        <Card cardFooter="frontend" cardWidth="w-[480px]" ]>
+          <div class="flex justify-center">
+            <Icon name="react" class="mx-4 h-10 w-10" />
+            <Icon name="remix" class="mx-4 h-10 w-10" />
+            <Icon name="astro_logo_figma" class="mx-4 h-10 w-10" />
+            <Icon name="tailwind" class="mx-4 h-10 w-10" />
+          </div>
+        </Card>
+      </div>
+      <div class="flex h-[200px] w-full items-center justify-center">
+        <Card cardFooter="backend" cardWidth="w-[480px]" ]>
+          <div class="flex justify-center">
+            <Icon name="nodejs" class="mx-4 h-10 w-10" />
+            <Icon name="mongodb" class="mx-4 h-10 w-10" />
+            <Icon name="mysql" class="mx-4 h-10 w-10" />
+          </div>
+        </Card>
+      </div>
+      <div class="flex h-[200px] w-full items-center justify-center">
+        <Card cardFooter="deployment & CI/CD" cardWidth="w-[480px]" ]>
+          <div class="flex justify-center">
+            <Icon name="gitlab" class="mx-4 h-10 w-10" />
+            <Icon name="railway" class="mx-4 h-10 w-10" />
+            <Icon name="github-mark-white" class="mx-4 h-10 w-10" />
+            <Icon name="vercel" class="mx-4 h-10 w-10" />
+          </div>
+        </Card>
+      </div>
+      <div class="flex h-[200px] w-full items-center justify-center">
+        <Card cardFooter="notes & ideation 💡" cardWidth="w-[480px]" ]>
+          <div class="flex justify-center">
+            <Icon name="notion" class="mx-4 h-10 w-10" />
+            <Icon name="excalidraw" class="mx-4 h-10 w-10" />
+          </div>
+        </Card>
+      </div>
+    </div>
+  </div>
+</div>

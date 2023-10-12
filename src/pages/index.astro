@@ -9,6 +9,7 @@ import ButtonPrimary from "../components/ButtonPrimary.astro";
 import ButtonSecondary from "../components/ButtonSecondary.astro";
 import Card from "../components/Card.astro";
 import ListItem from "../components/ListItem.astro";
+import TechStackMain from "../components/TechStackMain.astro";
 import BaseLayout from "../layout/BaseLayout.astro";
 
 const pagetitle: string = "vivek";
@@ -58,8 +59,8 @@ const pagetitle: string = "vivek";
             />
           </div>
         </div>
-        <div class="flex h-full justify-between">
-          <Card cardTitle="About Me" cardWidth="w-[720px]" cardHeight=" ">
+        <div class="mb-24 flex h-full justify-between">
+          <Card cardTitle="About Me" cardWidth="w-[720px]" cardHeight="">
             <p class="tracking-tight">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam
               id aliquid molestias earum similique, cupiditate fuga provident
@@ -98,6 +99,7 @@ const pagetitle: string = "vivek";
             />
           </Card>
         </div>
+        <TechStackMain />
       </section>
     </BaseLayout>
   </body>

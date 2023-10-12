@@ -1,12 +1,25 @@
 ---
-const { cardTitle, cardWidth, cardHeight } = Astro.props;
+const { cardTitle, cardWidth, cardHeight, cardFooter } = Astro.props;
 ---
 
-<main
-  class=`${cardWidth} ${cardHeight} border-2 border-solid border-neutral-border bg-neutral rounded-xl p-4`
->
-  <h1 class="mb-4 text-center text-2xl font-semibold tracking-tight">
-    {cardTitle}
-  </h1>
-  <slot />
-</main>
+<article class=`${cardWidth} ${cardHeight}`>
+  <div
+    class=`h-full ${cardWidth} ${cardHeight}  border-2 border-solid border-neutral-border bg-neutral rounded-xl p-4`
+  >
+    {
+      !!cardTitle?.length && (
+        <h1 class="mb-4 text-center text-2xl font-semibold tracking-tight">
+          {cardTitle}
+        </h1>
+      )
+    }
+    <slot />
+  </div>
+  {
+    !!cardFooter?.length && (
+      <h1 class="mt-4 text-center text-lg font-semibold tracking-tight">
+        {cardFooter}
+      </h1>
+    )
+  }
+</article>
