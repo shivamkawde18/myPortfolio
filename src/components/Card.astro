@@ -17,7 +17,7 @@ const { cardTitle, cardWidth, cardHeight, cardFooter } = Astro.props;
   </div>
   {
     !!cardFooter?.length && (
-      <h1 class="mt-4 text-center text-lg font-semibold tracking-tight">
+      <h1 class="mt-4 truncate text-center text-lg font-semibold tracking-tight">
         {cardFooter}
       </h1>
     )
