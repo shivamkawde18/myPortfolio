@@ -8,14 +8,14 @@ import Card from "./Card.astro";
     My Tech Stack
   </h1>
   <div class="relative mt-8 flex items-center justify-center">
-    <div class="border-neutral-border mx-auto h-[480px] w-[1px] border"></div>
+    <div class="mx-auto h-[480px] w-[1px] border border-neutral-border"></div>
     <div
-      class="border-neutral-border absolute mx-auto h-[1px] w-full max-w-[1130px] border"
+      class="absolute mx-auto h-[1px] w-full max-w-[1130px] border border-neutral-border"
     >
     </div>
     <div class="absolute mx-auto grid w-full max-w-[1130px] grid-cols-2">
       <div class="flex h-[200px] w-full items-center justify-center">
-        <Card cardFooter="frontend" cardWidth="w-[480px]" ]>
+        <Card cardFooter="frontend" cardWidth=" w-[240px] xl:w-[480px]">
           <div class="flex justify-center">
             <Icon name="react" class="mx-4 h-10 w-10" />
             <Icon name="remix" class="mx-4 h-10 w-10" />
@@ -25,7 +25,7 @@ import Card from "./Card.astro";
         </Card>
       </div>
       <div class="flex h-[200px] w-full items-center justify-center">
-        <Card cardFooter="backend" cardWidth="w-[480px]" ]>
+        <Card cardFooter="backend" cardWidth=" w-[240px] xl:w-[480px]">
           <div class="flex justify-center">
             <Icon name="nodejs" class="mx-4 h-10 w-10" />
             <Icon name="mongodb" class="mx-4 h-10 w-10" />
@@ -34,7 +34,11 @@ import Card from "./Card.astro";
         </Card>
       </div>
       <div class="flex h-[200px] w-full items-center justify-center">
-        <Card cardFooter="deployment & CI/CD" cardWidth="w-[480px]" ]>
+        <Card
+          cardFooter="deployment & CI/CD"
+          cardWidth=" w-[240px] xl:w-[480px]"
+          ]
+        >
           <div class="flex justify-center">
             <Icon name="gitlab" class="mx-4 h-10 w-10" />
             <Icon name="railway" class="mx-4 h-10 w-10" />
@@ -44,7 +48,11 @@ import Card from "./Card.astro";
         </Card>
       </div>
       <div class="flex h-[200px] w-full items-center justify-center">
-        <Card cardFooter="notes & ideation 💡" cardWidth="w-[480px]" ]>
+        <Card
+          cardFooter="notes & ideation 💡"
+          cardWidth="w-[240px] xl:w-[480px] "
+          ]
+        >
           <div class="flex justify-center">
             <Icon name="notion" class="mx-4 h-10 w-10" />
             <Icon name="excalidraw" class="mx-4 h-10 w-10" />

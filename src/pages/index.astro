@@ -25,11 +25,13 @@ const pagetitle: string = "vivek";
   </head>
 
   <BaseLayout pageTitle="hello">
-    <section class="section-1 min-h-screen w-full">
-      <div class="mb-24 flex justify-between">
+    <section class="section-1 w-full">
+      <div class="mb-24 flex flex-col-reverse justify-between xl:flex-row">
         <div class="max-w-2xl">
           <div>
-            <h1 class="text-header font-bold leading-none tracking-tight">
+            <h1
+              class="mt-10 text-header font-bold leading-none tracking-tight xl:mt-0"
+            >
               Hi there,I&apos;m <br /> Vivek Lokhande.
             </h1>
             <p class="mt-10">
@@ -42,7 +44,7 @@ const pagetitle: string = "vivek";
               <br /> people can use.On my journey to become a fullstack dev.
             </p>
           </div>
-          <div class="mt-20 flex gap-4">
+          <div class="mt-20 flex flex-col gap-4 sm:flex-row">
             <ButtonPrimary value="Read my blogs" href="/" />
             <ButtonSecondary value="Connect with me" href="/" />
           </div>
@@ -50,17 +52,21 @@ const pagetitle: string = "vivek";
         <div class="group relative w-fit">
           <Icon
             name="circle"
-            class="h-[340px] w-[340px] animate-spin-slow group-hover:animate-spin"
+            class="h-[150px] w-[150px] animate-spin-slow group-hover:animate-spin xl:h-[340px] xl:w-[340px]"
           />
           <Image
             src={MyImage}
             alt="my picture"
-            class="absolute left-5 top-5 cursor-pointer"
+            class="absolute left-2 top-2.5 h-[132px] w-[132px] cursor-pointer xl:left-5 xl:top-5 xl:h-[300px] xl:w-[300px]"
           />
         </div>
       </div>
-      <div class="mb-24 flex h-full justify-between">
-        <Card cardTitle="About Me" cardWidth="w-[720px]" cardHeight="">
+      <div class="mb-24 flex h-full flex-col justify-between gap-8 lg:flex-row">
+        <Card
+          cardTitle="About Me"
+          cardWidth="xl:basis-2/3 basis-4/6"
+          cardHeight=""
+        >
           <p class="tracking-tight">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam id
             aliquid molestias earum similique, cupiditate fuga provident eius
@@ -78,7 +84,11 @@ const pagetitle: string = "vivek";
             tempora tempore dolores.
           </p>
         </Card>
-        <Card cardTitle="Experience" cardWidth="w-[480px]" cardHeight="">
+        <Card
+          cardTitle="Experience"
+          cardWidth="basis-3/6 xl:basis-1/3"
+          cardHeight=""
+        >
           <ListItem
             imageObject={GeekyantsLogo}
             orgName="GEEKYANTS"
