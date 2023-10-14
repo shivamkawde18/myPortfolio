@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import NavbarMobile from "../components/NavbarMobile.astro";
 // Supports weights 100-900
 
 const { pageTitle } = Astro.props;
@@ -18,10 +19,16 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body class="min-h-screen font-sans">
-    <main class="container mx-auto px-2 sm:px-8 md:px-4 lg:px-0">
-      <Navbar />
+    <main class="container mx-auto px-2 pt-16 sm:px-8 md:px-4 md:pt-0 lg:px-0">
+      <div class="hidden md:block">
+        <Navbar />
+      </div>
+      <div class="flex justify-end md:hidden">
+        <NavbarMobile />
+      </div>
       <slot />
     </main>
   </body>
+
   <Footer />
 </html>

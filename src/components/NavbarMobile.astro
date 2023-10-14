@@ -1,0 +1,79 @@
+---
+import Card from "./Card.astro";
+import { Icon } from "astro-icon";
+---
+
+<div
+  class="overlay pointer-events-auto fixed inset-0 z-40 bg-black/60 transition-colors duration-300 md:pointer-events-none md:bg-transparent"
+>
+  <aside class="">
+    <nav
+      class="menu float-right mr-3 mt-4 w-auto cursor-pointer rounded-full border-2 border-solid border-neutral-border bg-neutral px-4 py-2"
+    >
+      <span class="font-semibold"> menu</span>
+    </nav>
+
+    <div
+      class="nav-links absolute right-3 top-16 flex flex-col rounded-md border-2 border-solid border-neutral-border bg-neutral p-1"
+    >
+      <div
+        class="w-40 cursor-pointer px-3 py-1 hover:text-color-red focus:text-color-red"
+      >
+        <span class="font-semibold">Blogs</span>
+      </div>
+      <div
+        class="w-40 cursor-pointer px-3 py-1 hover:text-color-yellow focus:text-color-yellow"
+      >
+        <span class="font-semibold">Talks</span>
+      </div>
+      <div
+        class="w-40 cursor-pointer px-3 py-1 hover:text-color-blue focus:text-color-blue"
+      >
+        <span class="font-semibold">Projects</span>
+      </div>
+      <div class="flex w-40 cursor-pointer px-3 py-2">
+        <Icon
+          name="github-mark-white"
+          alt="gh_logo"
+          class="mr-3 h-4 w-4 transform transition duration-300 hover:text-color-red focus:text-color-red"
+        />
+        <Icon
+          name="twitterx"
+          alt="x_logo"
+          class="mx-3 h-4 w-4 transform transition duration-300 hover:text-color-yellow focus:text-color-yellow"
+        />
+        <Icon
+          name="linkedin"
+          alt="linkedin_logo"
+          class="mx-3 h-4 w-4 transform transition duration-300 hover:text-color-blue focus:text-color-blue"
+        />
+      </div>
+    </div>
+  </aside>
+</div>
+
+<script>
+  const overlay = document.querySelector(".overlay") as HTMLDivElement;
+  const menu = document.querySelector(".menu") as HTMLDivElement;
+  const navLinks = document.querySelector(".nav-links") as HTMLDivElement;
+  menu.addEventListener("click", (event) => {
+    console.log("click");
+    navLinks.classList.toggle("hidden");
+    event.stopPropagation();
+    if (!navLinks.classList.contains("hidden")) {
+      overlay.classList.add("bg-black/60");
+    } else {
+      overlay.classList.remove("bg-black/60");
+    }
+  });
+
+  overlay.addEventListener("click", (event) => {
+    console.log("click-2");
+    const relatedTarget = event.relatedTarget as HTMLElement;
+    if (!navLinks.contains(relatedTarget)) {
+      navLinks.classList.add("hidden");
+      navLinks.classList.add("hidden");
+      overlay.classList.remove("bg-black/60");
+    }
+  });
+</script>
