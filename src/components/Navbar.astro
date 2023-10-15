@@ -2,32 +2,36 @@
 import { Icon } from "astro-icon";
 ---
 
-<aside class="flex justify-end">
-  <nav
-    class="mb-14 mr-4 mt-4 w-fit cursor-pointer rounded-full border-2 border-solid border-neutral-border bg-black px-4 py-2"
+<div class="relative mx-auto">
+  <aside
+    class="container fixed z-40 mx-auto flex w-full justify-end px-2 pt-16 sm:px-8 md:px-4 md:pt-0 lg:px-0"
   >
-    <a class="px-3 font-semibold">Blogs</a>
-    <a class="px-3 font-semibold">Talks</a>
-    <a class="px-3 font-semibold">Projects</a>
-    <a class="px-3 font-semibold">Contact</a>
-  </nav>
-  <nav
-    class="mb-14 mt-4 flex w-fit cursor-pointer rounded-full border-2 border-solid border-neutral-border bg-black px-4 py-2"
-  >
-    <Icon
-      name="github-mark-white"
-      alt="gh_logo"
-      class="mx-3 h-6 w-6 transform transition duration-300 hover:text-color-red focus:text-color-red"
-    />
-    <Icon
-      name="twitterx"
-      alt="x_logo"
-      class="mx-3 h-6 w-6 transform transition duration-300 hover:text-color-yellow focus:text-color-yellow"
-    />
-    <Icon
-      name="linkedin"
-      alt="linkedin_logo"
-      class="mx-3 h-6 w-6 transform transition duration-300 hover:text-color-blue focus:text-color-blue"
-    />
-  </nav>
-</aside>
+    <nav
+      class="mb-14 mr-4 mt-4 w-fit cursor-pointer rounded-full border-2 border-solid border-neutral-border bg-black px-4 py-2"
+    >
+      <a class="px-3 font-semibold">Blogs</a>
+      <a class="px-3 font-semibold">Talks</a>
+      <a class="px-3 font-semibold">Projects</a>
+      <a class="px-3 font-semibold">Contact</a>
+    </nav>
+    <nav
+      class="mb-14 mt-4 flex w-fit cursor-pointer rounded-full border-2 border-solid border-neutral-border bg-black px-4 py-2"
+    >
+      <Icon
+        name="github-mark-white"
+        alt="gh_logo"
+        class="mx-3 h-6 w-6 transform transition duration-300 hover:text-color-red focus:text-color-red"
+      />
+      <Icon
+        name="twitterx"
+        alt="x_logo"
+        class="mx-3 h-6 w-6 transform transition duration-300 hover:text-color-yellow focus:text-color-yellow"
+      />
+      <Icon
+        name="linkedin"
+        alt="linkedin_logo"
+        class="mx-3 h-6 w-6 transform transition duration-300 hover:text-color-blue focus:text-color-blue"
+      />
+    </nav>
+  </aside>
+</div>
