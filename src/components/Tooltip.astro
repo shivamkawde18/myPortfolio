@@ -1,0 +1,10 @@
+---
+const { text } = Astro.props;
+---
+
+<div class="has-tooltip">
+  <span class="tooltip -mt-7 rounded bg-neutral-border p-1 shadow-lg"
+    >{text}</span
+  >
+  <slot />
+</div>
