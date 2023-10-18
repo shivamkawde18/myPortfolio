@@ -25,7 +25,7 @@ const pagetitle: string = "vivek";
   </head>
 
   <BaseLayout pageTitle="hello">
-    <section class="section-1 w-full pt-20 md:pt-32">
+    <section class="section-1 relative w-full overflow-hidden pt-20 md:pt-32">
       <div class="mb-24 flex flex-col-reverse justify-between xl:flex-row">
         <div class="max-w-2xl">
           <div>
@@ -52,7 +52,7 @@ const pagetitle: string = "vivek";
             <ButtonSecondary value="Connect with me" href="/" />
           </div>
         </div>
-        <div class="group relative w-fit">
+        <div class="imageCard group relative w-fit">
           <Icon
             name="circle"
             class="h-[150px] w-[150px] animate-spin-slow group-hover:animate-spin xl:h-[340px] xl:w-[340px]"
@@ -60,7 +60,7 @@ const pagetitle: string = "vivek";
           <Image
             src={MyImage}
             alt="my picture"
-            class="absolute left-2 top-2.5 h-[132px] w-[132px] cursor-pointer xl:left-5 xl:top-5 xl:h-[300px] xl:w-[300px]"
+            class="imageCard__image absolute left-2 top-2.5 h-[132px] w-[132px] cursor-pointer opacity-0 ease-in-out xl:left-5 xl:top-5 xl:h-[300px] xl:w-[300px]"
           />
         </div>
       </div>
@@ -120,5 +120,28 @@ const pagetitle: string = "vivek";
     </section>
   </BaseLayout>
 
+  <script>
+    import { animate } from "motion";
 
+    const cardElement = document.querySelector(".imageCard");
+
+    animate(".imageCard__image", { opacity: 1 }, { duration: 2 });
+    animate(".imageCard", { scale: 0.95 });
+
+    // Function to animate on hover
+    function animateOnHover() {
+      animate(".imageCard__image", { opacity: 1 }, { duration: 2 });
+      animate(".imageCard", { scale: 1 });
+    }
+
+    // Function to reset animations on hover-out
+    function resetAnimations() {
+      animate(".imageCard__image", { opacity: 0.8 }, { duration: 2 });
+      animate(".imageCard", { scale: 0.95 });
+    }
+
+    // Add event listeners
+    cardElement.addEventListener("mouseover", animateOnHover);
+    cardElement.addEventListener("mouseout", resetAnimations);
+  </script>
 </html>
