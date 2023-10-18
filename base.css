@@ -49,25 +49,33 @@
 }
 
 .section-1::before {
-  position: absolute;
-  z-index: -1;
   content: "";
-  top: 10%;
-  bottom: 10%;
-  width: 100%;
-  left: -15%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0%;
+  right: 0;
+  z-index: -1;
   background: linear-gradient(176deg, #2930a9 10.97%, #5d6bd1 290%);
-  -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.45), transparent 70%);
+  -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.45), transparent 75%);
 }
 
 .section-2::before {
-  position: absolute;
-  z-index: -1;
   content: "";
-  top: -30%;
-  bottom: 10%;
-  width: 100%;
-  left: -5%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0%;
+  right: 0;
+  z-index: -1;
   background: linear-gradient(176deg, #2930a9 10.97%, #5d6bd1 290%);
-  -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.45), transparent 70%);
+  -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.45), transparent 75%);
+}
+
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
 }
