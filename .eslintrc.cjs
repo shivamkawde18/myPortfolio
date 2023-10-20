@@ -2,7 +2,12 @@ module.exports = {
   // ...
   extends: [
     // ...
+    "plugin:@typescript-eslint/recommended",
     "plugin:astro/recommended",
+    "plugin:astro/jsx-a11y-recommended",
+    "eslint:recommended",
+    "airbnb-base",
+    "prettier",
   ],
   // ...
   overrides: [
