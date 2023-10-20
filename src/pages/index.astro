@@ -25,9 +25,9 @@ const pagetitle: string = "vivek";
   </head>
 
   <BaseLayout pageTitle="hello">
-    <section class="section-1 relative w-full overflow-hidden pt-20 md:pt-32">
-      <div class="mb-24 flex flex-col-reverse justify-between xl:flex-row">
-        <div class="max-w-2xl">
+    <section class="section-1 relative min-h-screen w-full pt-20 md:pt-32">
+      <div class="mb-24 flex flex-col xl:flex-row xl:justify-between">
+        <div class="order-2 max-w-2xl xl:order-1">
           <div>
             <h1
               class="letters mt-10 cursor-pointer text-header font-bold leading-none tracking-tight xl:mt-0"
@@ -65,12 +65,12 @@ const pagetitle: string = "vivek";
               become a fullstack dev.
             </p>
           </div>
-          <div class="mt-20 flex flex-col gap-4 sm:flex-row">
+          <div class="mt-20 flex flex-col gap-4 px-4 sm:flex-row md:px-0">
             <ButtonPrimary value="Read my blogs" href="/" />
             <ButtonSecondary value="Connect with me" href="/" />
           </div>
         </div>
-        <div class="imageCard group relative w-fit">
+        <div class="imageCard group relative order-1 w-fit xl:order-2">
           <Icon
             name="circle"
             class="h-[150px] w-[150px] animate-spin-slow group-hover:animate-spin xl:h-[340px] xl:w-[340px]"
@@ -82,10 +82,12 @@ const pagetitle: string = "vivek";
           />
         </div>
       </div>
-      <div class="mb-24 flex h-full flex-col justify-between gap-8 lg:flex-row">
+      <div
+        class="item mb-24 flex flex-col gap-8 lg:flex-row xl:justify-between"
+      >
         <Card
           cardTitle="About Me"
-          cardWidth="xl:basis-2/3 basis-4/6"
+          cardWidth="xl:basis-2/3 basis-full"
           cardHeight=""
         >
           <p class="tracking-tight">
@@ -107,7 +109,7 @@ const pagetitle: string = "vivek";
         </Card>
         <Card
           cardTitle="Experience"
-          cardWidth="basis-3/6 xl:basis-1/3"
+          cardWidth="basis-full w-full xl:basis-1/3"
           cardHeight=""
         >
           <ul>
@@ -133,15 +135,24 @@ const pagetitle: string = "vivek";
         </Card>
       </div>
     </section>
-    <section class="section-2 relative mb-32 w-full">
+    <section class="section-2 relative mb-32 mt-20 w-full snap-start">
       <TechStackMain />
     </section>
   </BaseLayout>
 
   <script>
-    import { animate } from "motion";
+    import { animate, spring, inView, stagger } from "motion";
+    import "../scripts/home/letterAnimation";
 
-    const cardElement = document.querySelector(".imageCard");
+    const cardElement = document.querySelector(".imageCard") as HTMLDivElement;
+
+    inView(".section-2", () => {
+      animate(
+        ".svgRotate",
+        { rotate: 360 },
+        { easing: spring(), delay: stagger(0.1) },
+      );
+    });
 
     animate(".imageCard__image", { opacity: 1 }, { duration: 2 });
     animate(".imageCard", { scale: 0.95 });
@@ -161,137 +172,5 @@ const pagetitle: string = "vivek";
     // Add event listeners
     cardElement.addEventListener("mouseover", animateOnHover);
     cardElement.addEventListener("mouseout", resetAnimations);
-
-    setTimeout(() => {
-      const letterOne = document.querySelector(".letters__one");
-      const letterTwo = document.querySelector(".letters__two");
-      const letterThree = document.querySelector(".letters__three");
-      const letterFour = document.querySelector(".letters__four");
-      const letterFive = document.querySelector(".letters__five");
-      const letterSix = document.querySelector(".letters__six");
-      const letterSeven = document.querySelector(".letters__seven");
-      const letterEight = document.querySelector(".letters__eight");
-      const letterNine = document.querySelector(".letters__nine");
-      const letterTen = document.querySelector(".letters__ten");
-      const letterEleven = document.querySelector(".letters__eleven");
-      const letterTwelve = document.querySelector(".letters__twelve");
-      const letterThirteen = document.querySelector(".letters__thirteen");
-
-      // // Define the start and end letters
-      const startLetter = "a";
-      const endLetter1 = "v";
-      const endLetter2 = "i";
-      const endLetter3 = "v";
-      const endLetter4 = "e";
-      const endLetter5 = "k";
-      const endLetter6 = "l";
-      const endLetter7 = "o";
-      const endLetter8 = "k";
-      const endLetter9 = "h";
-      const endLetter10 = "a";
-      const endLetter11 = "n";
-      const endLetter12 = "d";
-      const endLetter13 = "e";
-      // // Convert letters to their char codes
-      const startCharCode = startLetter.charCodeAt(0);
-      const endCharCode1 = endLetter1.charCodeAt(0);
-      const endCharCode2 = endLetter2.charCodeAt(0);
-      const endCharCode3 = endLetter3.charCodeAt(0);
-      const endCharCode4 = endLetter4.charCodeAt(0);
-      const endCharCode5 = endLetter5.charCodeAt(0);
-      const endCharCode6 = endLetter6.charCodeAt(0);
-      const endCharCode7 = endLetter7.charCodeAt(0);
-      const endCharCode8 = endLetter8.charCodeAt(0);
-      const endCharCode9 = endLetter9.charCodeAt(0);
-      const endCharCode10 = endLetter10.charCodeAt(0);
-      const endCharCode11 = endLetter11.charCodeAt(0);
-      const endCharCode12 = endLetter12.charCodeAt(0);
-      const endCharCode13 = endLetter13.charCodeAt(0);
-      // Animate the letter based on the progress
-      animate(
-        (progress) => {
-          const currentCharCode = Math.round(
-            startCharCode + (endCharCode1 - startCharCode) * progress,
-          );
-          const currentCharCodeTwo = Math.round(
-            startCharCode + (endCharCode2 - startCharCode) * progress,
-          );
-          const currentCharCodeThree = Math.round(
-            startCharCode + (endCharCode3 - startCharCode) * progress,
-          );
-          const currentCharCodeFour = Math.round(
-            startCharCode + (endCharCode4 - startCharCode) * progress,
-          );
-          const currentCharCodeFive = Math.round(
-            startCharCode + (endCharCode5 - startCharCode) * progress,
-          );
-
-          const currentCharCodeSix = Math.round(
-            startCharCode + (endCharCode6 - startCharCode) * progress,
-          );
-          const currentCharCodeSeven = Math.round(
-            startCharCode + (endCharCode7 - startCharCode) * progress,
-          );
-          const currentCharCodeEight = Math.round(
-            startCharCode + (endCharCode8 - startCharCode) * progress,
-          );
-          const currentCharCodeNine = Math.round(
-            startCharCode + (endCharCode9 - startCharCode) * progress,
-          );
-          const currentCharCodeTen = Math.round(
-            startCharCode + (endCharCode10 - startCharCode) * progress,
-          );
-          const currentCharCodeEleven = Math.round(
-            startCharCode + (endCharCode11 - startCharCode) * progress,
-          );
-          const currentCharCodeTwelve = Math.round(
-            startCharCode + (endCharCode12 - startCharCode) * progress,
-          );
-          const currentCharCodeThirteen = Math.round(
-            startCharCode + (endCharCode13 - startCharCode) * progress,
-          );
-
-          const currentLetter = String.fromCharCode(currentCharCode);
-          const currentLetterTwo = String.fromCharCode(currentCharCodeTwo);
-          const currentLetterThree = String.fromCharCode(currentCharCodeThree);
-          const currentLetterFour = String.fromCharCode(currentCharCodeFour);
-          const currentLetterFive = String.fromCharCode(currentCharCodeFive);
-          const currentLetterSix = String.fromCharCode(currentCharCodeSix);
-          const currentLetterSeven = String.fromCharCode(currentCharCodeSeven);
-          const currentLetterEight = String.fromCharCode(currentCharCodeEight);
-          const currentLetterNine = String.fromCharCode(currentCharCodeNine);
-          const currentLetterTen = String.fromCharCode(currentCharCodeTen);
-          const currentLetterEleven = String.fromCharCode(
-            currentCharCodeEleven,
-          );
-          const currentLetterTwelve = String.fromCharCode(
-            currentCharCodeTwelve,
-          );
-          const currentLetterThirteen = String.fromCharCode(
-            currentCharCodeThirteen,
-          );
-          letterOne.innerHTML = currentLetter.toUpperCase();
-          letterTwo.innerHTML = currentLetterTwo;
-          letterThree.innerHTML = currentLetterThree;
-          letterFour.innerHTML = currentLetterFour;
-          letterFive.innerHTML = currentLetterFive;
-          letterSix.innerHTML = currentLetterSix.toUpperCase();
-          letterSeven.innerHTML = currentLetterSeven;
-          letterEight.innerHTML = currentLetterEight;
-          letterNine.innerHTML = currentLetterNine;
-          letterTen.innerHTML = currentLetterTen;
-          letterEleven.innerHTML = currentLetterEleven;
-          letterTwelve.innerHTML = currentLetterTwelve;
-          letterThirteen.innerHTML = currentLetterThirteen;
-        },
-        {
-          duration: 2,
-          easing: "ease-in",
-        },
-      );
-    }, 300);
   </script>
 </html>
-<!-- // (progress) => { -->
-<!--
-
