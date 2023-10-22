@@ -47,9 +47,12 @@
     mask-image: radial-gradient(rgba(0, 0, 0, 0.45), transparent 70%);
   }
 }
-#index {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
+
+@media (max-width: 640px) {
+  #index {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+  }
 }
 
 .section-1::before {
