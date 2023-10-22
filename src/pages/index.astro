@@ -15,7 +15,7 @@ import BaseLayout from "../layout/BaseLayout.astro";
 const pagetitle: string = "vivek";
 ---
 
-<html lang="en">
+<html id="index" lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -25,9 +25,11 @@ const pagetitle: string = "vivek";
   </head>
 
   <BaseLayout pageTitle="hello">
-    <section class="section-1 relative min-h-screen w-full pt-20 md:pt-32">
-      <div class="mb-24 flex flex-col xl:flex-row xl:justify-between">
-        <div class="order-2 max-w-2xl xl:order-1">
+    <section
+      class="section-1 relative min-h-screen w-full snap-start pt-20 md:pt-32"
+    >
+      <div class="mb-24 flex flex-col lg:flex-row lg:justify-between">
+        <div class="order-2 max-w-2xl lg:order-1">
           <div>
             <h1
               class="letters mt-10 cursor-pointer text-header font-bold leading-none tracking-tight xl:mt-0"
@@ -70,20 +72,20 @@ const pagetitle: string = "vivek";
             <ButtonSecondary value="Connect with me" href="/" />
           </div>
         </div>
-        <div class="imageCard group relative order-1 w-fit xl:order-2">
+        <div class="imageCard group relative order-1 w-fit lg:order-2">
           <Icon
             name="circle"
-            class="h-[150px] w-[150px] animate-spin-slow group-hover:animate-spin xl:h-[340px] xl:w-[340px]"
+            class="h-[150px] w-[150px] animate-spin-slow group-hover:animate-spin lg:h-[340px] lg:w-[340px]"
           />
           <Image
             src={MyImage}
             alt="my picture"
-            class="imageCard__image absolute left-2 top-2.5 h-[132px] w-[132px] cursor-pointer opacity-0 ease-in-out xl:left-5 xl:top-5 xl:h-[300px] xl:w-[300px]"
+            class="imageCard__image absolute left-2 top-2.5 h-[132px] w-[132px] cursor-pointer opacity-0 ease-in-out lg:left-5 lg:top-5 lg:h-[300px] lg:w-[300px]"
           />
         </div>
       </div>
       <div
-        class="item mb-24 flex flex-col gap-8 lg:flex-row xl:justify-between"
+        class="item mb-24 hidden flex-col gap-8 lg:flex-row xl:flex xl:justify-between"
       >
         <Card
           cardTitle="About Me"
@@ -135,6 +137,58 @@ const pagetitle: string = "vivek";
         </Card>
       </div>
     </section>
+    <section
+      class="item mb-24 flex min-h-screen snap-start flex-col items-center justify-center gap-8 lg:flex-row xl:hidden xl:justify-between"
+    >
+      <Card
+        cardTitle="About Me"
+        cardWidth="xl:basis-2/3 basis-full"
+        cardHeight=""
+      >
+        <p class="tracking-tight">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam id
+          aliquid molestias earum similique, cupiditate fuga provident eius
+          obcaecati modi iusto labore voluptate, sit nihil quasi maxime, tempora
+          tempore dolores.
+          <br />
+           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam id
+          aliquid molestias earum similique, cupiditate fuga provident eius
+          obcaecati modi iusto labore voluptate, sit nihil quasi maxime, tempora
+          tempore dolores.
+          <br />
+           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam id
+          aliquid molestias earum similique, cupiditate fuga provident eius
+          obcaecati modi iusto labore voluptate, sit nihil quasi maxime, tempora
+          tempore dolores.
+        </p>
+      </Card>
+      <Card
+        cardTitle="Experience"
+        cardWidth="basis-full w-full xl:basis-1/3"
+        cardHeight=""
+      >
+        <ul>
+          <ListItem
+            imageObject={GeekyantsLogo}
+            orgName="GEEKYANTS"
+            position="software engineer-II"
+            tenure="Aug 2022 ‐ Present"
+          />
+          <ListItem
+            imageObject={GeekyantsLogo}
+            orgName="GEEKYANTS"
+            position="software engineer-I"
+            tenure="Aug 2021 ‐ Aug 2022"
+          />
+          <ListItem
+            imageObject={BiencapsLogo}
+            orgName="Biencaps"
+            position="motion graphics designer"
+            tenure="June 2020 - Aug 2020"
+          />
+        </ul>
+      </Card>
+    </section>
     <section class="section-2 relative mb-32 mt-20 w-full snap-start">
       <TechStackMain />
     </section>
@@ -142,7 +196,7 @@ const pagetitle: string = "vivek";
 
   <script>
     import { animate, spring, inView, stagger } from "motion";
-    import "../scripts/home/letterAnimation";
+    // import "../scripts/home/letterAnimation";
 
     const cardElement = document.querySelector(".imageCard") as HTMLDivElement;
 

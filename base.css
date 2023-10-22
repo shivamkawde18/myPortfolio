@@ -47,14 +47,11 @@
     mask-image: radial-gradient(rgba(0, 0, 0, 0.45), transparent 70%);
   }
 }
-
-html {
+#index {
   scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
-.section-1 {
-  scroll-snap-align: start;
-}
 .section-1::before {
   content: "";
   position: absolute;
