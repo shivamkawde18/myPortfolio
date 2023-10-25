@@ -1,5 +1,5 @@
 # This portfolio is built using astro
-## link to the design [here](https://drive.google.com/file/d/1xbWxcFMvRtM3J1YcDJa8cxFkXSFSKbiA/view?usp=sharing)
+## link to the design [here](https://www.figma.com/file/aX8EzakpEYntYfIz89CYfR/Portfolio?type=design&node-id=3%3A336&mode=design&t=Fbk8PWsA9y857Xki-1)
 
 
 ## 🚀 Project Structure
