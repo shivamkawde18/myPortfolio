@@ -69,7 +69,10 @@ const pagetitle: string = "vivek";
           </div>
           <div class="mt-20 flex flex-col gap-4 px-4 sm:flex-row md:px-0">
             <ButtonPrimary value="Read my blogs" href="/" />
-            <ButtonSecondary value="Connect with me" href="/" />
+            <ButtonSecondary
+              value="Resume"
+              href="https://flowcv.com/resume/sn0nv3i4u3"
+            />
           </div>
         </div>
         <div class="imageCard group relative order-1 w-fit lg:order-2">
@@ -195,13 +198,8 @@ const pagetitle: string = "vivek";
   </BaseLayout>
 
   <script>
-    import { animate, spring, inView, stagger } from "motion";
+    import { animate, spring, inView, stagger, timeline } from "motion";
     import "../scripts/home/letterAnimation";
-    // if (screen.width > 640) {
-    //   const script = document.createElement("script");
-    //   script.src = "./src/scripts/home/letterAnimation.ts";
-    //   document.body.appendChild(script);
-    // }
 
     const cardElement = document.querySelector(".imageCard") as HTMLDivElement;
 
