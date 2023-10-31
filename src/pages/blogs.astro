@@ -1,0 +1,25 @@
+---
+import "../../base.css";
+import BlogCard from "../components/blogs/BlogCard.astro";
+import BaseLayout from "../layout/BaseLayout.astro";
+---
+
+<BaseLayout pageTitle="viveks portfolio blog">
+  <section
+    class="flex flex-col items-center justify-center px-8 pb-20 pt-40 text-center md:h-1/2 md:pb-0 md:pt-20 2xl:px-32"
+  >
+    <h1 class="text-5xl font-semibold leading-tight tracking-tight">My blog</h1>
+    <p class="mt-7 max-w-2xl text-lg font-medium leading-relaxed">
+      I like to write about software development 🚀 & open source 🥑.
+    </p>
+  </section>
+  <section class="relative mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <BlogCard />
+    <BlogCard />
+    <BlogCard />
+    <BlogCard />
+    <BlogCard />
+    <BlogCard />
+  </section>
+  <section class="h-32" aria-hidden="true"></section>
+</BaseLayout>
