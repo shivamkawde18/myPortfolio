@@ -16,6 +16,9 @@ module.exports = {
         "color-yellow": "#FBCC13",
         footer: "#171717",
       },
+      height: {
+        "1/2": "50vh",
+      },
       variants: {
         fill: ["hover", "focus"],
       },
