@@ -1,0 +1,26 @@
+---
+const { cardTitle, cardWidth, cardHeight, cardFooter } = Astro.props;
+import { Image } from "astro:assets";
+import GradientImage from "../../icons/GradientImage.jpg";
+---
+
+<article
+  class="relative h-[336px] w-auto cursor-pointer rounded-xl bg-neutral ring-1 ring-neutral-border"
+>
+  <div class="h-48">
+    <Image src={GradientImage} alt="my picture" class="h-full rounded-t-xl" />
+  </div>
+
+  <div class="p-2 text-left xl:p-4">
+    <p class="mt-6 text-lg font-semibold tracking-tight">
+      this is the blog title
+    </p>
+    <p class="mt-2 text-sm tracking-tight">
+      this is the blog description, which is too long to read hence i am adding
+      it lorem ..
+    </p>
+    <p class="pt-2 text-xs text-neutral-border">
+      March 14th, 2023 — 15 min read
+    </p>
+  </div>
+</article>
