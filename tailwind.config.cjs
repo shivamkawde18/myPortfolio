@@ -25,11 +25,13 @@ module.exports = {
       animation: {
         "spin-slow": "spin 9s linear infinite",
       },
+
       backgroundImage: {
         "blue-purple-gradient":
           "linear-gradient(176deg, #2930A9 10.97%, #5D6BD1 290%)",
         "radial-blur-gradient":
           "radial-gradient(rgba(0, 0, 0, 0.45), transparent 70%)",
+        "grainy-gradient": "linear-gradient(to right, #FE3E70, transparent)",
       },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
