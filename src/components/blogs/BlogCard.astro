@@ -1,26 +1,45 @@
 ---
-const { cardTitle, cardWidth, cardHeight, cardFooter } = Astro.props;
+const { cardTitle, cardSubtitle, dateTime, imageUrl } = Astro.props;
+import Icon from "astro-icon";
 import { Image } from "astro:assets";
-import GradientImage from "../../icons/GradientImage.jpg";
+import myGradient from "../../icons/myGradient.jpeg";
+
+console.log({ imageUrl });
 ---
 
 <article
-  class="relative h-[336px] w-auto cursor-pointer rounded-xl bg-neutral ring-1 ring-neutral-border"
+  class="relative flex h-[450px] w-auto transform cursor-pointer flex-col rounded-xl bg-neutral ring-neutral-border transition duration-300 hover:ring-2 hover:ring-color-red hover:ring-offset-2"
 >
-  <div class="h-48">
-    <Image src={GradientImage} alt="my picture" class="h-full rounded-t-xl" />
+  <div class="realtive group h-48 w-auto">
+    <Image
+      src={myGradient}
+      height={100}
+      width={100}
+      alt="my picture"
+      class="h-full w-full rounded-t-xl"
+    />
+
+    <Image
+      src={imageUrl}
+      height={100}
+      width={100}
+      alt="my picture"
+      class="absolute top-0 h-48 w-full transform rounded-t-xl object-contain opacity-25 transition duration-300 group-hover:opacity-50"
+    />
   </div>
 
-  <div class="p-2 text-left xl:p-4">
-    <p class="mt-6 text-lg font-semibold tracking-tight">
-      this is the blog title
-    </p>
-    <p class="mt-2 text-sm tracking-tight">
-      this is the blog description, which is too long to read hence i am adding
-      it lorem ..
-    </p>
+  <div class="flex basis-full flex-col justify-between p-2 text-left xl:p-4">
+    <div>
+      <p class="mt-6 text-lg font-semibold tracking-tight">
+        {cardTitle}
+      </p>
+      <p class="mt-2 h-10 text-sm tracking-tight">
+        {cardSubtitle}
+      </p>
+    </div>
     <p class="pt-2 text-xs text-neutral-border">
       March 14th, 2023 — 15 min read
+      {dateTime}
     </p>
   </div>
 </article>
