@@ -10,6 +10,7 @@ module.exports = {
         black: "#111111",
         white: "#FFFFFF",
         neutral: "#18181B",
+        "neutral-two": "2E3039",
         "neutral-border": "#4B4C52",
         "color-blue": "#1EA2F1",
         "color-red": "#D03E3F",
