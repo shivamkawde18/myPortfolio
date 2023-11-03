@@ -2,26 +2,7 @@
 import "../../base.css";
 import BlogCard from "../components/blogs/BlogCard.astro";
 import BaseLayout from "../layout/BaseLayout.astro";
-type BlogPost = {
-  node: {
-    author: {
-      username: string;
-      id: string;
-      name: string;
-    };
-    title: string;
-    subtitle: string;
-    slug: string;
-    canonicalUrl: string | null;
-    readTimeInMinutes: number;
-    publishedAt: string;
-    coverImage: {
-      url: string;
-      attribution: string | null;
-      photographer: string | null;
-    } | null;
-  };
-};
+import type { BlogPost } from "../types/blogs/BlogPost.ts";
 
 const response = await fetch("https://gql.hashnode.com/", {
   method: "POST",
@@ -74,7 +55,6 @@ const response = await fetch("https://gql.hashnode.com/", {
 
 const json = await response.json();
 const data = json.data;
-console.log({ data });
 ---
 
 <BaseLayout pageTitle="viveks portfolio blog">
@@ -94,6 +74,7 @@ console.log({ data });
           cardSubtitle={blog.node.subtitle}
           dateTime={blog.node.publishedAt}
           imageUrl={blog.node.coverImage?.url}
+          readTimeInMinutes={blog.node.readTimeInMinutes}
         />
       ))
     }

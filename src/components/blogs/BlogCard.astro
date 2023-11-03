@@ -1,14 +1,15 @@
 ---
-const { cardTitle, cardSubtitle, dateTime, imageUrl } = Astro.props;
+const { cardTitle, cardSubtitle, dateTime, imageUrl, readTimeInMinutes } =
+  Astro.props;
 import Icon from "astro-icon";
 import { Image } from "astro:assets";
 import myGradient from "../../icons/myGradient.jpeg";
-
-console.log({ imageUrl });
+import { formatDate } from "../../utils/UTCDateStringToReadable";
+console.log({ readTimeInMinutes });
 ---
 
 <article
-  class="group-hover:bg-neutral-two group relative flex h-[450px] w-auto transform cursor-pointer flex-col rounded-xl bg-neutral ring-neutral-border transition duration-300 hover:ring-2 hover:ring-color-red hover:ring-offset-2"
+  class="group relative flex h-[450px] w-auto transform cursor-pointer flex-col rounded-xl bg-neutral ring-offset-black transition duration-300 hover:outline-none hover:ring-2 hover:ring-color-yellow hover:ring-offset-4"
 >
   <div class="realtive h-48 w-auto">
     <Image
@@ -16,7 +17,7 @@ console.log({ imageUrl });
       height={100}
       width={100}
       alt="my picture"
-      class="h-full w-full rounded-t-xl"
+      class="m h-full w-full rounded-t-xl mix-blend-soft-light"
     />
 
     <Image
@@ -24,7 +25,7 @@ console.log({ imageUrl });
       height={100}
       width={100}
       alt="my picture"
-      class="absolute top-0 h-48 w-full transform rounded-t-xl object-contain opacity-25 transition duration-300 group-hover:opacity-50"
+      class="absolute top-0 h-48 w-full transform rounded-t-xl object-cover opacity-50 transition duration-300 group-hover:opacity-100"
     />
   </div>
 
@@ -38,8 +39,7 @@ console.log({ imageUrl });
       </p>
     </div>
     <p class="pt-2 text-xs text-neutral-border">
-      March 14th, 2023 — 15 min read
-      {dateTime}
+      {formatDate(dateTime)} — {readTimeInMinutes} min read
     </p>
   </div>
 </article>
