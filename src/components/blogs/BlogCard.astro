@@ -5,11 +5,10 @@ import Icon from "astro-icon";
 import { Image } from "astro:assets";
 import myGradient from "../../icons/myGradient.jpeg";
 import { formatDate } from "../../utils/UTCDateStringToReadable";
-console.log({ readTimeInMinutes });
 ---
 
 <article
-  class="group relative flex h-[450px] w-auto transform cursor-pointer flex-col rounded-xl bg-neutral ring-offset-black transition duration-300 hover:outline-none hover:ring-2 hover:ring-color-yellow hover:ring-offset-4"
+  class="group relative flex h-[450px] w-auto transform cursor-pointer flex-col rounded-xl bg-neutral ring-1 ring-neutral-border ring-offset-black transition duration-300 hover:outline-none hover:ring-2 hover:ring-color-yellow hover:ring-offset-4"
 >
   <div class="realtive h-48 w-auto">
     <Image
@@ -25,7 +24,7 @@ console.log({ readTimeInMinutes });
       height={100}
       width={100}
       alt="my picture"
-      class="absolute top-0 h-48 w-full transform rounded-t-xl object-cover opacity-50 transition duration-300 group-hover:opacity-100"
+      class="absolute top-0 h-48 w-full transform rounded-t-xl object-cover opacity-80 transition duration-300 group-hover:opacity-100"
     />
   </div>
 
