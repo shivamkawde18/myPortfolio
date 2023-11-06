@@ -6,6 +6,7 @@ export type BlogPost = {
       id: string;
       name: string;
     };
+    url: string;
     title: string;
     subtitle: string;
     slug: string;

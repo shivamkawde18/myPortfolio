@@ -12,6 +12,7 @@ export const userPublicationsQuery = `
                     id
                     name
                   }
+                  url
                   title
                   subtitle
                   slug
