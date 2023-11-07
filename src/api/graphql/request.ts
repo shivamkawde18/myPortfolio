@@ -1,8 +1,8 @@
-import type { GraphQLVariables } from "./types";
+import type { GraphQLVariables, GraphQLPostSlugVariable } from "./types";
 
 const makeGraphQLRequest = async (
   query: string,
-  variables: GraphQLVariables,
+  variables: GraphQLVariables | GraphQLPostSlugVariable,
 ) => {
   const response = await fetch(import.meta.env.HASHNODE_BASE_URL, {
     method: "POST",

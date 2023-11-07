@@ -37,3 +37,22 @@ export const userPublicationsQuery = `
     }
   }
 `;
+
+export const userGetBlogFromSlug = `
+query GetUserPublications($id: ObjectId!, $slug: String!) {
+  publication(id: $id) {
+    post(slug: $slug) {
+      title
+      subtitle
+      url
+      views
+      publishedAt
+      coverImage {
+        url
+        attribution
+        photographer
+      }
+      readTimeInMinutes
+    }
+  }
+}`;
